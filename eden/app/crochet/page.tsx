@@ -2,19 +2,19 @@ import Image from "next/image";
 
 const products = [
   {
-    name: "موجود کوچولوی سبز",
-    price: "۲۸۰ هزار تومان",
-    image: "/crochet-products.png",
+    name: "پونی کوچولو",
+    price: "380 هزار تومان",
+    image: "/fluttershy.png",
   },
   {
-    name: "دوست صورتی",
-    price: "۳۲۰ هزار تومان",
-    image: "/crochet-products.png",
+    name: "شیریمپی",
+    price: "180 هزار تومان",
+    image: "/Shrimp.png",
   },
   {
-    name: "همراه کوچولوی آبی",
-    price: "۲۶۰ هزار تومان",
-    image: "/crochet-products.png",
+    name: "ستار",
+    price: "140 هزار تومان",
+    image: "/Satar.png",
   },
 ];
 
