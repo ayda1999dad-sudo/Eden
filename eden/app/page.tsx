@@ -105,20 +105,18 @@ export default function Home() {
 
         <div className="mx-auto mt-16 grid max-w-6xl gap-5 md:grid-cols-3">
           <ProductCard
-            title="بافتنی کوچک"
-            price="۲۵۰ هزار تومان"
-            number="۰۱"
-          />
-          <ProductCard
-            title="اکسسوری دست‌ساز"
-            price="۱۸۰ هزار تومان"
-            number="۰۲"
-          />
-          <ProductCard
-            title="چیز مرموز"
-            price="۳۵۰ هزار تومان"
-            number="۰۳"
-          />
+  title="بافتنی هامون"
+  category="قلاب‌بافی"
+  href="/crochet"
+  image="/crochet-products.png"
+/>
+
+<ProductCard
+  title="اکسسوری هامون"
+  category="اکسسوری"
+  href="/accessories"
+  image="/accessories-products.png"
+/>
         </div>
       </section>
 
@@ -139,39 +137,44 @@ export default function Home() {
 
 function ProductCard({
   title,
-  price,
-  number,
+  category,
+  href,
+  image,
 }: {
   title: string;
-  price: string;
-  number: string;
+  category: string;
+  href: string;
+  image: string;
 }) {
   return (
-    <article className="group cursor-pointer">
+    <a href={href} className="group block cursor-pointer">
       <div className="relative aspect-square overflow-hidden border-2 border-black bg-white">
         <div className="absolute inset-8 rotate-[-3deg] border-2 border-black transition-transform duration-500 group-hover:rotate-3" />
 
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-7xl font-black opacity-10 transition-opacity duration-500 group-hover:opacity-20">
-            {number}
-          </span>
-        </div>
+        <div className="absolute inset-0 flex items-center justify-center p-8">
+  <Image
+    src={image}
+    alt={title}
+    width={600}
+    height={600}
+    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+  />
+</div>
 
         <div className="absolute bottom-5 right-5 text-sm">
-          شاید این یکی تو را انتخاب کند.
+          {category}
         </div>
       </div>
 
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
           <h3 className="font-bold">{title}</h3>
-          <p className="mt-1 text-sm text-black/50">{price}</p>
         </div>
 
         <span className="text-xl transition-transform duration-300 group-hover:-translate-x-2">
           ←
         </span>
       </div>
-    </article>
+    </a>
   );
 }
