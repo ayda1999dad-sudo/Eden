@@ -5,16 +5,19 @@ const products = [
     name: "پونی کوچولو",
     price: "380 هزار تومان",
     image: "/fluttershy.png",
+     href: "#",
   },
   {
     name: "شیریمپی",
     price: "180 هزار تومان",
     image: "/Shrimp.png",
+     href: "#",
   },
   {
     name: "ستار",
     price: "140 هزار تومان",
     image: "/Satar.png",
+     href: "/crochet/satar",
   },
 ];
 
@@ -37,7 +40,7 @@ export default function CrochetPage() {
           href="/"
           className="text-sm transition-opacity hover:opacity-50"
         >
-          ← برگشت به خانه
+          ← بریم خونه
         </a>
       </header>
 
@@ -64,10 +67,11 @@ export default function CrochetPage() {
       <section className="border-t-2 border-black px-6 py-16 md:px-16">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
           {products.map((product, index) => (
-            <article
-              key={product.name}
-              className="group cursor-pointer"
-            >
+           <a
+  key={product.name}
+  href={product.href}
+  className="group block cursor-pointer"
+>
               <div className="relative aspect-square overflow-hidden border-2 border-black bg-white">
                 <Image
                   src={product.image}
@@ -96,7 +100,7 @@ export default function CrochetPage() {
                   ←
                 </span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>
