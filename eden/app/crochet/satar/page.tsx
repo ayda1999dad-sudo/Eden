@@ -12,7 +12,7 @@ const colors = [
     {
     name: "پیچ",
     value: "#F6A08F",
-    image: "/Satar-peach.png",
+    image: "/satar-peach.png",
   },
 ];
 
